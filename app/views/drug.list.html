@@ -1,0 +1,30 @@
+<h1 class="text-center">
+  My Products
+</h1>
+<section id="t-cards">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-md-3" ng-repeat="drug in drugs">
+        <div class="panel panel-default panel-card">
+          <div class="panel-heading">
+            <img ng-src="{{drug.picture_url}}" />
+            <button class="btn btn-primary btn-sm" type="button" role="button" ng-click="redirectToDetails(drug.id)">
+              Details
+            </button>
+          </div>
+          <div class="panel-body text-center">
+            <h4 class="panel-header">
+              <span ng-bind="drug.name"></span>
+            </h4>
+            <small>Available Stock</small>
+            <h2>
+            <span ng-bind="drug.quantity"></span> g.
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<br/>
+<br/>

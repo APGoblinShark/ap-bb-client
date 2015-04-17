@@ -1,0 +1,35 @@
+{
+  "id": "0001",
+  "name": "Marijuana",
+  "picture_url": "http://www.isiahfactor.com/wp-content/uploads/2015/02/wpid-marijuana71.jpg",
+  "quantity": 238,
+  "transactions": [{
+    "id": "0001",
+    "date": "2015-01-01 00:00:00",
+    "price": 5000,
+    "quantity": 1000,
+    "movement": "BUY",
+    "details": "1kg to FBE"
+  },{
+    "id": "0002",
+    "date": "2015-01-08 00:00:00",
+    "price": 9000,
+    "quantity": 800,
+    "movement": "SELL",
+    "details": "800g to JRO"
+  },{
+    "id": "0003",
+    "date": "2015-02-18 00:00:00",
+    "price": 500,
+    "quantity": 50,
+    "movement": "BUY",
+    "details": "50g to SRI"
+  },{
+    "id": "0004",
+    "date": "2015-02-20 00:00:00",
+    "price": 150,
+    "quantity": 12,
+    "movement": "SELL",
+    "details": "12g to FBE"
+  }]
+}
