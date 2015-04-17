@@ -10,9 +10,10 @@
 
             <!-- Transaction movement -->
             <div class="form-group">
-              <label class="col-md-3 control-label" for="pictUrl">Image</label>
-              <div class="col-md-8">
-                <input id="pictUrl" name="pictUrl" type="text" placeholder="Lien vers la photo de l'élément" class="form-control">
+              <label class="col-md-3 control-label" for="email">Transaction</label>
+              <div class="btn-group col-md-4">
+                <label class="btn btn-primary" ng-model="transaction.movement" btn-radio="'BUY'">Buy</label>
+                <label class="btn btn-primary" ng-model="transaction.movement" btn-radio="'SELL'">Sell</label>
               </div>
             </div>
 
@@ -20,7 +21,8 @@
             <div class="form-group">
               <label class="col-md-3 control-label" for="email">Quantity (g)</label>
               <div class="col-md-8">
-                <input id="price" name="price" type="number" placeholder="How much you sold/bought ?" class="form-control" ng-model="transaction.quantity">
+                <input id="price" name="price" type="number" placeholder="How much you sold/bought ?"
+                class="form-control" ng-model="transaction.quantity">
               </div>
             </div>
 
@@ -28,7 +30,8 @@
             <div class="form-group">
               <label class="col-md-3 control-label" for="email">Price (€)</label>
               <div class="col-md-8">
-                <input id="price" name="price" type="number" placeholder="How much you got/paid ?" class="form-control" ng-model="transaction.price">
+                <input id="price" name="price" type="number" placeholder="How much you got/paid ?"
+                class="form-control" ng-model="transaction.price">
               </div>
             </div>
 
@@ -37,7 +40,8 @@
             <div class="form-group">
               <label class="col-md-3 control-label" for="productUrl">Details</label>
               <div class="col-md-8">
-                <input id="productUrl" name="productUrl" type="text" placeholder="What is this transaction about ?" class="form-control" ng-model="transaction.details">
+                <input id="productUrl" name="productUrl" type="text" placeholder="What is this transaction about ?"
+                class="form-control" ng-model="transaction.details">
               </div>
             </div>
 

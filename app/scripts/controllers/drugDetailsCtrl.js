@@ -16,19 +16,27 @@ angular
 
       function computeBalance() {
         var balance = 0;
+        var quantity = 0;
         var transactions = $scope.drug.transactions;
         angular
           .forEach(transactions, function(transaction) {
-            var price = transaction.price;
+            var t_price = transaction.price;
+            var t_quantity = transaction.quantity;
             //TODO put me in a constant file
             //Maybe the file const duplicated by grunt ?
             if (transaction.movement === CONST_BUY) {
-              price = -price;
+              t_price = -t_price;
+            } else {
+              t_quantity = - t_quantity;
             }
-            balance += price;
+
+            balance += t_price;
+            quantity += t_quantity;
+
           });
 
         $scope.drugBalance = balance;
+        $scope.drug.quantity = quantity;
       }
 
       function addTransaction(transaction) {
