@@ -14,6 +14,9 @@ angular
   .module('mydrugstore.services', []);
 
 angular
+  .module('mydrugstore.config', []);
+
+angular
   .module('mydrugstore.controllers', [
     'ui.bootstrap'
   ]);
@@ -23,6 +26,7 @@ angular
     'ui.router',
     'mydrugstore.controllers',
     'mydrugstore.services',
+    'mydrugstore.config'
   ]);
 
 

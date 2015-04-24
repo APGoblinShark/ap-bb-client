@@ -14,16 +14,11 @@ angular
       };
 
       $scope.ok = function() {
-        //TODO check DTO ok
-        console.log($scope.transaction);
-        console.log(drugId);
         Drug
           .addTransaction(drugId, $scope.transaction)
           .then(function(data) {
-            console.log('Received');
-            $modalInstance.close(data);
+            $modalInstance.close(data.data);
           }, function(err) {
-            //TODO handle error
             $modalInstance.close(null);
           })
       };

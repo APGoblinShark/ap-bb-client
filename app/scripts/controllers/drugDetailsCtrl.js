@@ -48,7 +48,7 @@ angular
         Drug
           .get(drugId)
           .then(function(data) {
-            $scope.drug = data.data;
+            $scope.drug = data.data.product;
             computeBalance();
           }, function(err) {
             //TODO handle error
@@ -114,8 +114,8 @@ console.log('cureent id is ', $scope.drug.id);
 
         modalInstance
           .result
-          .then(function(transaction) {
-            addTransaction(transaction);
+          .then(function(data) {
+            addTransaction(data.transaction);
           }, function() {
 
           });

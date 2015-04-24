@@ -3,14 +3,14 @@
 angular
   .module('mydrugstore.services')
   .factory('Drug', [
-    '$http', '$q',
-    function($http, $q) {
+    '$http', '$q', 'myDrugStoreConfiguration',
+    function($http, $q, myDrugStoreConfiguration) {
 
       function getAll() {
         return $http({
-            method: 'GET',
-            url: 'data/drugs.json'
-          })
+          method: 'GET',
+          url: myDrugStoreConfiguration.serverUrl + 'products'
+        })
           .success(function(data) {
             return data;
           })
@@ -20,12 +20,11 @@ angular
       }
 
       function get(drugId) {
-        console.log('receivedId : ', drugId);
 
         return $http({
-            method: 'GET',
-            url: 'data/drug.json'
-          })
+          method: 'GET',
+          url: myDrugStoreConfiguration.serverUrl + 'products/' + drugId
+        })
           .success(function(data) {
             return data;
           })
@@ -35,18 +34,20 @@ angular
       }
 
       function addTransaction(drugId, transactionDto) {
-        var deferred = $q.defer();
-
-        //TODO remove me
-        var transaction = transactionDto;
-        transaction.id = '12345';
-        transaction.date = moment();
-
-        setTimeout(function() {
-          deferred.resolve(transaction);
-        }, 1000);
-
-        return deferred.promise;
+        return $http({
+          method: 'POST',
+          url: myDrugStoreConfiguration.serverUrl + 'products/' + drugId + '/transactions',
+          data: transactionDto,
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+          .success(function(data) {
+            return data;
+          })
+          .error(function(data, status) {
+            return null;
+          });
       }
 
       return {

@@ -12,7 +12,7 @@ angular
         Drug
           .getAll()
           .then(function(data) {
-            $scope.drugs = data.data;
+            $scope.drugs = data.data.products;
           }, function(err) {
             //TODO handle error
           });
